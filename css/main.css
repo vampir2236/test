@@ -1,0 +1,21 @@
+.page-header {
+    margin-top: 20px;
+}
+
+.btn-create {
+    margin-bottom: 10px;
+}
+
+.js-form {
+    margin-bottom: 50px;
+}
+
+.tooltip.top .tooltip-arrow {
+    border-top-color: #ce1313;
+}
+
+.tooltip-inner {
+    background: #ce1313;
+    color: #fff;
+    padding: 10px;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Тестовое задание</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header"><a class="navbar-brand" href="/">Тестовое задание</a></div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="page-header">
+        <h1>Клиенты</h1>
+    </div>
+
+    <div class="col-lg-8 col-sm-10 col-xs-12">
+        <a href="/clients/create" class="btn btn-success btn-create" title="Добавить">
+            <span class="glyphicon glyphicon-plus"></span> Добавить
+        </a>
+        <table class="table table-bordered">
+            <tr>
+                <th>Имя</th>
+                <th>Пол</th>
+                <th>Дата рождения</th>
+                <th>Телефон</th>
+                <th>Действие</th>
+            </tr>
+
+            <tr>
+                <td>Alexander</td>
+                <td>male</td>
+                <td>21.12.1985</td>
+                <td>8 (950) 819-88-79</td>
+                <td>
+                    <a href="/clients/5/edit" class="btn btn-primary" title="Отредактировать">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <button class="btn btn-danger" title="Удалить" data-href="/clients/5/delete" data-toggle="modal"
+                            data-target="#modalConfirmDelete">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="container">
+    <div class="page-header">
+        <h1>Информация о клиенте</h1>
+    </div>
+
+    <form action="/clients/5" method="POST" class="form-horizontal js-form">
+        <div class="form-group">
+            <label for="inputName" class="col-sm-2 control-label">Имя</label>
+
+            <div class="col-sm-4">
+                <input type="text" id="inputName" class="form-control js-name" data-toggle="tooltip" maxlength="256"
+                       placeholder="Введите Ваше имя">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputGender" class="col-sm-2 control-label">Пол</label>
+
+            <div class="col-sm-4">
+                <select id="inputGender" class="form-control js-gender" data-toggle="tooltip"
+                        placeholder="Выберите Ваш пол">
+                    <option value="1">Мужской</option>
+                    <option value="2">Женский</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputBirthday" class="col-sm-2 control-label">Дата рождения</label>
+
+            <div class="col-sm-4">
+                <input type="text" id="inputBirthday" class="form-control js-birthday" data-toggle="tooltip"
+                       placeholder="Введите Вашу дату рождения">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPhone" class="col-sm-2 control-label">Телефон</label>
+
+            <div class="col-sm-4">
+                <input type="text" id="inputPhone" class="form-control js-phone" data-toggle="tooltip"
+                       placeholder="Введите Ваш телефон">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success" title="Сохранить">
+                    <span class="glyphicon glyphicon-ok"></span> Сохранить
+                </button>
+                <a href="/clients" class="btn btn-default" title="Вернуться к списку">
+                    <span class="glyphicon glyphicon-menu-left"></span> Вернуться к списку
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="modal" id="modalConfirmDelete" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content modal-sm">
+            <div class="modal-header">Подтверждение</div>
+            <div class="modal-body text-center">Удалить клиента?</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+                <a class=" btn btn-danger js-modal-btn-delete">Удалить</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery-ui.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/datepicker-ru.min.js"></script>
+<script src="/js/jquery.maskedinput.min.js"></script>
+<script src="/js/main.js"></script>
+</body>
+
+</html>
